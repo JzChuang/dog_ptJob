@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	<!-- 数据库驱动包位置 -->
+	<classPathEntry location="C:\Users\Administrator\.m2\repository\mysql\mysql-connector-java\5.1.34\mysql-connector-java-5.1.34.jar" />
+	<context id="DB2Tables" targetRuntime="MyBatis3">
+		<!-- 为了防止生成的代码中有很多注释，比较难看，加入下面的配置控制 -->
+		<commentGenerator>
+			<property name="suppressAllComments" value="true" />
+			<property name="suppressDate" value="true" />
+		</commentGenerator>
+		<!-- 注释控制完毕 -->
+
+		<!-- 数据库链接URL、用户名、密码 -->
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://localhost:3306/ptjob" userId="root"
+			password="410653">
+			<!--
+				oracle 数据库连接的信息 <jdbcConnection
+				driverClass="oracle.jdbc.driver.OracleDriver"
+				connectionURL="jdbc:oracle:thin:@localhost:1521:orcl" userId="scott"
+				password="tiger">
+			-->
+		</jdbcConnection>
+		
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+		<!-- 生成实体类的包名和位置，这里配置将生成的实体类放在com.etc.cms.entity这个包下 -->
+		<javaModelGenerator targetPackage="com.ptjob.entity"
+			targetProject="Myjob/src/main/java">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+		<!-- 生成的SQL映射文件包名和位置，这里配置将生成的SQL映射文件放在com.etc.mapping这个包下 -->
+		<sqlMapGenerator targetPackage="com.ptjob.mapper"
+			targetProject="Myjob/src/main/java">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+		<!-- 生成DAO的包名和位置，这里配置将生成的dao类放在com.etc.dao这个包下 -->
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="com.ptjob.dao" targetProject="Myjob/src/main/java">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+		<!-- 要生成那些表(更改tableName和domainObjectName就可以) -->
+		
+		<table tableName="v_jobcollect" domainObjectName="JobCollect"
+			enableCountByExample="false" enableUpdateByExample="false"
+			enableDeleteByExample="false" enableSelectByExample="false"
+			selectByExampleQueryId="false">
+			<!-- 设置驼峰命名 -->
+			<property name="useActualColumnNames" value="true"/>
+		</table>
+		
+	</context>
+</generatorConfiguration>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ptjob.dao.UsersMapper">
+  <resultMap id="BaseResultMap" type="com.ptjob.entity.Users">
+    <id column="logId" jdbcType="INTEGER" property="logId" />
+    <result column="userName" jdbcType="VARCHAR" property="userName" />
+    <result column="passWord" jdbcType="VARCHAR" property="passWord" />
+    <result column="userType" jdbcType="VARCHAR" property="userType" />
+  </resultMap>
+   <sql id="Base_Column_List">
+    logId, userName, passWord, userType
+  </sql>
+   <!-- 查询所有已注册的学生 -->
+  <select id="getAllUsers" resultMap="BaseResultMap">
+  	select 
+  	 <include refid="Base_Column_List" />
+    from login
+  </select>
+  
+   <select id="selectStuByName" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from login
+    where userName = #{userName}
+  </select>
+  
+  
+   <insert id="insertUsers" parameterType="com.ptjob.entity.Users">
+    insert into login (logId, userName, passWord, 
+      userType)
+    values (#{logId,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, #{passWord,jdbcType=VARCHAR}, 
+      #{userType,jdbcType=VARCHAR})
+  </insert>
+  
+  <!-- 根据手机号查询该条记录是否存在 -->
+  <select id="getUsersByNum" parameterType="String" resultMap="BaseResultMap">
+  	select 
+    <include refid="Base_Column_List" />
+    from login
+    where userName = #{userName}
+  </select>
+  
+  <update id="updatePsw" parameterType="com.ptjob.entity.Users">
+  update login set passWord = #{passWord,jdbcType=VARCHAR}
+  where 1= 1 
+  and userName = #{userName,jdbcType=VARCHAR}
+  </update>
+  
+  
+</mapper>

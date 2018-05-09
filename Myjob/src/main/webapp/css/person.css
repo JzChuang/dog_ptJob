@@ -1,0 +1,473 @@
+@charset "utf-8";
+/* CSS Document */
+body{ background:#fbfbfb;}
+
+.p_log{ float:right; height:26px; line-height:26px; margin:26px 5px;font-size:12px;}
+.p_log span{ margin-left:15px;}
+.p_log a{margin-left:15px; width:46px;  color:#333;}
+.p_log a:hover{ color:#ff7800;}
+.p_log a.xx{color:#ff7800;}
+/**/
+.p_nav{ width:120px; float:left;border-top:1px solid #eeeeee;}
+.p_nav a{ width:118px; height:40px; display:block; border:1px solid #eeeeee; background:#fff; font-size:14px; border-top:none; line-height:40px; text-align:center; color:#777777;transition: background ease .2s;}
+.p_nav a:hover,.p_nav a.cur{ color:#fff; background:#ff8a00; border:1px solid #ff8a00; border-top:none; background:#ff8a00;}
+/*基本信息*/
+.p_right{ border:1px solid #eee; background:#fff; width:1050px; float:right; min-height:500px; position:relative;}
+.p_right .p_jl{ width:900px; margin:35px 75px;}
+.p_right .p_jl .p_title{ border-bottom:1px solid #ff8a00; height:40px; line-height:40px; margin-bottom:20px;}
+.p_right .p_jl .p_title b{ height:16px; line-height:16px; border-left:5px solid #ff8a00; padding-left:10px; display:inline-block;}
+.p_right .p_jl .p_line{ margin:10px 0;}
+.p_right .p_jl .p_line:after{ content:""; clear:both; display:block;}
+.p_right .p_jl .p_line .p_span{ width:115px; text-align:right; font-size:14px; line-height:30px; color:#333333; float:left;}
+.p_right .p_jl .p_line .p_span2{ width:50px; text-align:left; font-size:14px; line-height:30px; color:#333333; float:left;}
+.p_right .p_jl .p_line .p_xx{ margin-left:20px;float:left; position:relative;}
+.p_right .p_jl .p_line .p_xx .p_sex{ color:#000; height:30px; line-height:30px; font-size:14px;}
+.p_right .p_jl .p_line .p_xx .p_sex input[type=radio]{ vertical-align:middle; margin:0 10px;}
+.p_right .p_jl .p_line .p_xx input[type=checkbox]{ vertical-align:middle; margin:0 10px;}
+.p_right .p_jl .p_line .p_xx input[type=text],.p_right .p_jl .p_line .p_xx input[type=password]{ 
+ background:#fdfdfd; border:1px solid #dcdcdc; height:28px; line-height:28px; padding:0 3px; margin-right:10px; width:210px;
+ font-size:14px;color:#000000
+}
+.p_right .p_jl .p_line .alabel{font-size:14px;color:#000000}
+/*.p_right .p_jl .p_line .p_xx input.on{ border:1px solid #ffb258;}*/
+.p_right .p_jl .p_line .p_xx label{  line-height:35px; font-size:12px;}/**color:#999999;*/
+.p_right .p_jl .p_line .p_xx input:focus{ border:1px solid #ffb258;}
+.p_right .p_jl .p_line .p_xx textarea:focus{ border:1px solid #ffb258;}
+.p_right .p_jl .p_line .p_xx .p_qy_k:focus{ border:1px solid #ffb258;}
+
+.p_right .p_jl .p_line .p_xx input.error{ border:1px solid #f66200;}
+.p_right .p_jl .p_line .p_xx textarea{ background:#fdfdfd; border:1px solid #dcdcdc; height:100px; line-height:28px; padding:0 3px; width:360px; resize:none;}
+.p_right .p_jl .p_line .p_xx .p_qy_k{ background: #fdfdfd; border:1px solid #dcdcdc; height:28px; position:relative; line-height:28px; padding:0 3px; width:210px;}
+.p_right .p_jl .p_line .p_xx .p_qy_k b{background: url("../images/arrow.gif")/*tpa=http://www.taojianz.com/images/arrow.gif*/ bottom center no-repeat; position:absolute; top:7px; right:5px; width:7px; height:12px; display:block;}
+.p_right .p_jl .p_line .p_xx .p_qy_k.one b{background: url("../images/arrow.gif")/*tpa=http://www.taojianz.com/images/arrow.gif*/ top center no-repeat;}
+.p_right .p_jl .p_line .p_xx span{font-size:14px; line-height:30px; color:#000000; margin-left:10px;}
+.p_right .p_jl .p_line .p_xx span:focus{font-size:14px; line-height:30px; color:#000000; margin-left:10px;}
+.p_right .p_jl .p_line .p_xx p{ color:#999999; line-height:35px; font-size:12px;}
+.p_right .p_jl .p_line .p_xx h3{ color:#000; font-weight:normal; line-height:35px; font-size:14px;margin-top: -2px;}
+.p_button{ width:76px; height:28px; line-height:28px; text-align:center; color:#fff; background:#FF8A00; border:1px solid #ff7800; border-radius:3px; display:block;}
+.p_button:hover{ background:#ff9b26;}
+.p_button2{ width:165px; height:48px; line-height:48px; text-align:center; color:#fff; background:#FF8A00; border:1px solid #ff7800; font-size:18px; border-radius:5px; margin:100px auto 50px auto; display:block;}
+.p_button2:hover{ background:#ff9b26;}
+.p_button3{ width:106px; height:32px; line-height:32px; text-align:center; color:#fff; background:#FF8A00; border:1px solid #ff7800; font-size:14px; border-radius:5px; margin:30px 0 50px 115px; display:block;}
+.p_button3:hover{ background:#ff9b26;}
+.Name_yes{background:url("../images/reg_btn.png")/*tpa=http://www.taojianz.com/images/reg_btn.png*/ -91px 5px no-repeat; display:inline-block; width:18px; height:28px; margin-left:5px;line-height:28px; vertical-align:middle  }
+.Name_tips, .Name_error{ height:28px; line-height:28px; color:#ff6600; font-size:12px; margin-left:5px; display:inline-block; width:180px;}
+.Name_tips em, .Name_error em{ background:url("../images/reg_btn.png")/*tpa=http://www.taojianz.com/images/reg_btn.png*/ -68px 5px no-repeat; display:inline-block; width:18px; height:23px; float:left;margin-right:5px;}
+.Name_tips em{ background:url("../images/reg_btn.png")/*tpa=http://www.taojianz.com/images/reg_btn.png*/ -43px 5px no-repeat;}
+.Name_tips{ color:#6DB7EA}
+
+.send_more{ display:none; width:216px;border:1px solid #ccc; border-top:none; position:absolute; left:0; top:30px; background:#fdfdfd; z-index:999; font-size:12px;}
+.top_menu{ width:216px;border-bottom:1px solid #ccc; height:30px;}
+.top_menu li{height:30px; line-height:30px;width:71px;font-size:12px;text-align:center;border-bottom:1px solid #ccc;border-right:1px solid #ccc; background:#eee; float:left;}
+.top_menu li.current{ background:#fdfdfd; border-bottom:1px solid #fdfdfd; color:#FF8A00; }
+.top_menu li.current span{ color:#FF8A00}
+.top_menu a{ float:right; font-size:30px; line-height:30px; margin-right:10px;}
+.nr_menu { width:216px;}
+.nr_menu .aa{ display: block;}
+.nr_menu .hidee{ display:none;}
+.nr_menu ul li{ float:left; line-height:20px; margin:5px 0; width:100%;}
+.nr_menu ul li i{ color:#999; width:40px; text-align:center; margin-top:5px; height:20px; line-height:20px; display:block; float:left; font-style:normal;}
+.nr_menu ul li p{ float:left; width:160px;}
+.nr_menu ul li a{ padding:0 3px; display:inline-block; color:#333;border:1px solid #fdfdfd; text-align:center;height:20px; line-height:20px; margin:5px 0px 5px 5px;}
+.nr_menu ul li a:hover{ border:1px solid #dadbdd; height:20px; line-height:20px;}
+.nr_menu ul li a:active{ border:1px solid #fe8900; background:#fe8900; height:20px; line-height:20px; color:#fff}
+/*申请记录*/
+.p_sq{ width:100%; margin-top:10px;}
+.p-tab{ border-bottom:3px solid #ff8901;height:41px; margin:35px 30px 0 30px; }
+.p-tab ul li{ width:150px; height:41px; background:#fbfbfb; line-height:41px; text-align:center; display:block; float:left;transition: background ease .3s;}
+.p-tab ul li a{ color:#555555; font-size:14px; display:block;background:url("../images/def_nor.gif")/*tpa=http://www.taojianz.com/images/def_nor.gif*/ right no-repeat;}
+.p-tab ul li.cur,.p-tab ul li:hover{ background:#FF8A00; border-top-left-radius:6px;border-top-right-radius:6px;}
+.p-tab ul li.cur a,.p-tab ul li:hover a{ color:#fff;}
+.p-box{ display:none;}
+.p-box.block{ display:block}
+.person{ background:#fff; border-bottom:1px solid #FF8A00;}
+.person ul li{ background:#fff;}
+
+
+/**/
+.p_right .m_title{ border-bottom:1px solid #ff8a00; margin:10px 30px; height:20px; padding-bottom:10px; padding-top:10px; margin-bottom:20px; overflow:hidden; font-size:13px;}
+.m_left{ height:20px; line-height:20px; float:left; color:#555555;}
+.m_left input{ vertical-align:middle;}
+.m_left span{ margin:0 5px;}
+.m_left b.del{ font-weight:normal; cursor:pointer; display:inline-block; padding-left:18px; background:url("../images/del1.gif")/*tpa=http://www.taojianz.com/images/del1.gif*/ left center no-repeat; color:#000; margin-left:10px;}
+.m_left b.del:hover{background:url("../images/del2.gif")/*tpa=http://www.taojianz.com/images/del2.gif*/ left center no-repeat; color:#ff9519;}
+.m_right{ height:20px; line-height:20px; float:right;}
+.m_right input{ vertical-align:middle;padding:0 8px;border:1px solid #e5e5e5;border-radius:5px;background:#fff; margin:0 3px; line-height:20px; height:20px; width:30px;}
+.m_right a{ font-family:"宋体"; padding:0 8px; border:1px solid #e5e5e5; border-radius:3px; color:#666; background:#fff; margin:0 3px; line-height:20px; height:20px; display:inline-block;}
+.m_right a:hover{ background:#ff9519; border:1px solid #ff9519; color:#ff9519;}
+.m_right a.a2{ background:#ff8a00; color:#fff;border:1px solid #ff8a00;}
+.m_right a.a2:hover{ background:#fe9516; }
+.m_right span{ font-size:13px; margin:0 12px;}
+.m_right i{ font-style:normal; margin:0 5px;}
+
+.messege{ width:100%; background:#fff;font-size:12px;}
+.messege ul li{ height:48px;}
+.messege ul li:hover,.messege ul li.on{ background:#fbfbfb; border-bottom:1px dashed #e8e8e8;border-top:1px dashed #e8e8e8;height:46px;}
+  /*,.messege ul li.on{ background:#fbfbfb; border-bottom:1px solid #e8e8e8;border-top:1px solid #e8e8e8;height:46px;}*/
+.messege .about{margin:0px 30px; padding:15px 0;border-bottom:1px dashed #e8e8e8;height:18px; overflow:hidden;}
+.messege ul li:hover .about{ border-bottom:none;height:18px;padding:14px 0 15px 0;} 
+.messege ul li.on .about{ border-bottom:none;height:26px;padding:14px 0 15px 0;} 
+.messege ul li input{float:left; vertical-align:middle;}
+.messege ul li .mail_no{float:left; width:18px; height:18px; background:url("../images/message1.gif")/*tpa=http://www.taojianz.com/images/message1.gif*/ no-repeat; display:block; margin:0 15px;}
+.messege ul li .mail_yes{float:left; width:18px; height:18px; background:url("../images/message2.gif")/*tpa=http://www.taojianz.com/images/message2.gif*/ no-repeat; display:block; margin:0 15px;}
+.messege ul li a{ width:750px; float:left; height:18px; line-height:18px; font-size:14px; text-overflow:ellipsis; white-space:nowrap; overflow:hidden; color:#333;}
+.messege ul li a b{ font-weight:normal; color:#555;}
+.messege ul li span{float:left; width:170px; text-align:right; display:block;}
+/**/
+.address{text-align:center; line-height:50px; font-size:12px; color:#888888; margin-top:30px; }
+
+/*地址*/
+.add_content{ border:1px solid #eee; margin-bottom:20px; background:#fff; font-size:14px; position:relative;}
+.add_content .add_sf{ height:30px; padding:17px 0; border-top:1px solid #eee; position:relative;}
+.add_content .add_sf b{ width:110px; text-align:right; display:block; float:left; line-height:30px;}
+/*.add_content .add_sf b.xl{background: url(../images/arrow.gif) bottom center no-repeat; position:absolute; top:7px; right:5px; width:7px; height:12px; display:block;}*/
+
+.add_content .add_sf a.btn{ width:46px; height:26px; line-height:26px; text-align:center; color:#fff; background:#FF8A00; border:1px solid #ff7800; border-radius:3px; display:block; float:left; margin-left:10px; margin-right:50px;}
+.add_content .add_sf a.btn:hover{ background:#ff9b26;}
+.add_content .add_sf p{ float:left;}
+.add_content .add_sf p a{ margin:5px 10px; padding:0 5px; display:inline-block; color:#333; font-size:14px; line-height:20px; word-break:keep-all;}
+.add_content .add_sf p a:hover{background:#ff8a00; color:#fff; border-radius:3px;}
+.add_content .add_sf input{width:180px; padding-left:5px; height:28px; background:#fdfdfd; border:1px solid #eee; float:left; line-height:28px; margin-left:10px; color:#888;}
+.add_content .add_sf input.on{ border:1px solid #ff9c27; color:#000;}
+.add_content .a_input{ width:120px; padding-left:5px; height:28px; background:#fdfdfd; border:1px solid #eee; float:left; line-height:28px; margin-left:10px;}
+.add_content .xz_btn{ width:178px; height:46px; line-height:46px; text-align:center; color:#fff; background:#FF8A00; border:1px solid #ff7800; border-radius:3px; display:block;margin:15px 25px; font-size:18px; font-weight:bold;}
+.add_content .xz_btn:hover{ background:#ff9b26;}
+.add_content .add_azm{ background:url("../images/zm.gif")/*tpa=http://www.taojianz.com/images/zm.gif*/ no-repeat; width:148px; height:33px; padding-bottom:5px; line-height:33px; text-align:center; color:#fff; font-weight:bold; display:block; position:absolute; left:20px; top:15px;}
+.add_content .add_xq { margin:75px 0;}
+.add_content .add_xq ul li{ padding:10px 25px; overflow:hidden; margin-bottom:10px;border-bottom:1px solid #fff; border-top:1px solid #fff;}
+.add_content .add_xq ul li:hover{ background:#f7f7f7; border-bottom:1px solid #eee; border-top:1px solid #eee;}
+.add_content .add_xq ul li:hover b{ background:#ff8a00;color:#fff;}
+.add_content .add_xq ul li b{ width:32px; height:32px; text-align:center; line-height:32px; display:block; background:#eee; border-radius:5px; float:left;}
+.add_content .add_xq ul li b:hover{background:#ff8a00; color:#fff;}
+.add_content .add_xq ul li p{ float:left; width:1050px; margin-left:30px;}
+.add_content .add_xq ul li p a{margin:5px 10px; padding:0 5px; font-weight:bold; display:inline-block; color:#333; font-size:14px; line-height:20px; word-break:keep-all;}
+.add_content .add_xq ul li p a:hover{ background:#ff8a00; color:#fff; border-radius:3px;}
+.add_content .add_sf span{ color:#888; margin-left:30px; font-size:14px;}
+.add_content .add_sf span i{ font-style:normal; color:#000; margin:0 5px;}
+.add_content .add_sf span i:hover{ color:#ff8a00;}
+.wxewm{ width:205px; height:242px; background:url("../images/wxewm.gif")/*tpa=http://www.taojianz.com/images/wxewm.gif*/ no-repeat; position:absolute; top:-230px; left:215px; display:block;}
+.add_qy{ width:90px; padding-left:5px; height:28px; background:#fdfdfd; border:1px solid #eee; float:left; line-height:28px; margin-left:10px; position:relative;}
+.add_qy em{ font-style:normal; display:block;}
+.add_qy i{background: url("../images/arrow.gif")/*tpa=http://www.taojianz.com/images/arrow.gif*/ bottom center no-repeat; position:absolute; top:7px; right:5px; width:7px; height:12px; display:block;}
+.add_qy.one i{background: url("../images/arrow.gif")/*tpa=http://www.taojianz.com/images/arrow.gif*/ top center no-repeat;}
+.add_ul{ width:93px; line-height:28px; border:1px solid #eee; background:#fdfdfd; border-top:none; position:absolute; top:30px; left:0; z-index:999;}
+.add_ul a{ display:block; color:#333; padding-left:3px;}
+.add_ul a:hover{ color:#fff; background:#ff8a00;}
+/*企业中心*/
+.p_right .p_jl .p_line .p_xx .wid_550{ width:550px;}
+.p_right .p_jl .p_line .p_xx input.wid_550{ width:550px;}
+.p_right .p_jl .p_line .p_xx .wid_450{ width:450px;}
+.p_right .p_jl .p_line .p_xx input.wid_450{ width:450px;}
+.p_right .p_jl .p_line .p_xx .wid_380{ width:380px;}
+.p_right .p_jl .p_line .p_xx input.wid_380{ width:380px;}
+.p_right .p_jl .p_line .p_xx textarea.on{ border:1px solid #ffb258;}
+.p_right .p_jl .p_line .p_xx p img{ width:237px; height:100px; border:1px solid #eee; padding:17px; display:block; margin:15px 0;}
+.p_right .p_jl .p_line .p_xx .p_tips{ font-size:12px; color:#888888; line-height:25px;}
+.wd_210{ width:210px;}
+.wd_70{width: 70px;}
+.wd_90{ width:90px;}
+.wd_100{ width:100px;}
+.wd_120{width: 120px;}
+.wd_130{ width:130px;}
+.wd_140{ width:140px;}
+.wd_150{ width:130px;}
+.wd_160{width: 160px;}
+.wd_170{width: 170px;}
+.wd_180{width: 180px;}
+.wd_190{ width:190px;}
+.wd_230{ width:230px;}
+.wd_240{ width:240px;}
+.wd_250{ width:250px;}
+.wd_300{width: 300px;}
+.wd_440{ width:440px;}
+.wd_450{ width:450px;} 
+  
+
+.sub_title{ height:16px; padding:9px 0; background:#fbfbfb; margin:15px 30px;}
+.sub_title span{ border-left:1px solid #d8d8d8; display:inline-block; text-align: center; height:16px; float:left; font-size:14px; line-height:16px;}
+.subscribe{ width:100%; background:#fff;font-size:12px;}
+.subscribe ul li{ height:48px;}
+.subscribe ul li:hover{ height:46px;border-bottom:1px solid #e8e8e8;border-top:1px solid #e8e8e8; }/* background:red;#fbfbfb ;border-bottom:1px solid #F8F8F8;border-top:1px solid #F8F8F8;*/
+.subscribe .about{margin:0px 30px; padding:11px 0;height:26px; overflow:hidden;}
+.subscribe ul li:hover .about{ border-bottom:none;height:26px;padding:10px 0 11px 0;}
+.subscribe ul li a{ text-align:center; }
+.subscribe ul li a.s{font-size:12px; text-overflow:ellipsis; color:#333; overflow:hidden; white-space:nowrap;display:inline-block; text-align: center; height:26px; float:left; line-height:26px;}
+.subscribe ul li span{font-size:12px;text-overflow:ellipsis;color:#333; overflow:hidden; white-space:nowrap;display:inline-block; text-align: center; height:26px; float:left;line-height:26px;}
+.subscribe ul li a.btn2{font-size:12px; width:67px; height:24px; line-height:24px; margin-left:10px; text-align:center; color:#fff; background:#FF8A00; border:1px solid #ff7800; border-radius:3px; display:inline-block;}
+.subscribe ul li a.btn2:hover{ background:#ff9b26;}
+.subscribe ul li a.btn3{font-size:12px; margin:0 5px;height:24px; line-height:24px; text-align:center; color:#fe8400; display:inline-block;}
+.subscribe ul li a.btn3:hover{ color:#ff5a01;}
+.s_return{ position:absolute; display:block; right:50px; top:25px; background: url("../images/return.png")/*tpa=http://www.taojianz.com/images/return.png*/ left center no-repeat; height:14px; font-size:12px; line-height:14px; padding-left:20px; color:#ff8a00;}
+.s_return:hover{ color:#ff5a00;}
+.s_return2{ position:absolute; display:block; right:150px; top:25px; height:14px; font-size:12px; line-height:14px; padding-left:20px; color:#ff8a00;}
+.s_return:hover{ color:#ff5a00;}
+.s_title{ border-bottom:1px solid #ff8a00; height:40px; line-height:40px; margin:20px 70px;}
+.s_title b{ height:16px; line-height:16px; border-left:5px solid #ff8a00; padding-left:10px; display:inline-block;}
+.s_title b i{ font-style:normal; font-size:12px; color:#888; font-weight:normal; margin-left:5px;}
+.s_xq{ margin:0 70px;}
+.s_xq .s_name{ overflow:hidden; font-size:12px;}
+.s_xq .s_name img{ width:100px; height:100px; background:url("../images/photo_bg.png")/*tpa=http://www.taojianz.com/images/photo_bg.png*/ center no-repeat; display:block; float:left; padding:18px; border:1px solid #eee; background:#fff;}
+
+.s_xq  .staffphoto .smallimg{ width:100px; height:100px; background:url("../images/photo_bg.png")/*tpa=http://www.taojianz.com/images/photo_bg.png*/ center no-repeat; display:block; float:left; padding:18px; border:1px solid #eee; background:#fff;}
+.s_xq  .staffphoto{position:relative;}
+.s_xq  .staffphoto span img{border-width: 0;padding: 2px; width:500px;}
+.s_xq  .staffphoto span{ position: absolute;padding: 3px;border: 1px solid gray;visibility: hidden;background-color:#FFFFFF;}
+.s_xq .staffphoto:hover{background-color:transparent;}
+.s_xq .staffphoto:hover span{visibility: visible;top:0; left:60px;} 
+
+.s_xq .s_name .s_nm{ background:#fbfbfb; border:1px solid #eee; padding:18px; height:100px; float:left; width:720px; margin-left:10px;}
+.s_xq .s_name .s_nm p{ color:#8d8d8d; line-height:30px;}
+.s_xq .s_name .s_nm p span{ color:#333; width:120px; display:inline-block;}
+.s_xq .s_name .s_nm p i{ display:inline-block; width:60px; text-align:right; font-style:normal;}
+.s_xq .s_tree{ border-left:1px solid #eee; margin-top:20px; margin-bottom:250px;}
+.s_xq .s_tree .s_tips{ background:url("../images/s_bq.gif")/*tpa=http://www.taojianz.com/images/s_bq.gif*/ no-repeat; width:74px; height:38px; line-height:38px; padding-left:50px; font-size:14px; color:$333; margin-bottom:15px; margin-left:-9px;}
+.s_xq .s_tree .s_some{ background:#fbfbfb; border:1px solid #eee; line-height:24px; border-radius:5px; margin-left:25px; margin-bottom:20px; padding:18px; width:845px;}
+.s_xq .s_tree .s_some p{ font-size:14px; color:#555555;}
+.s_xq .s_tree .s_some p span{ color:#8d8d8d}
+.s_xq .s_tree .s_some p i{ display:block; font-style:normal}
+
+.s_line{ border-bottom:1px solid #eee; padding:30px 0px 30px 150px; margin:0 70px; overflow:hidden;}
+.s_line .fx{ background:url("../images/bm.png")/*tpa=http://www.taojianz.com/images/bm.png*/ -164px 0 no-repeat; width:78px; height:77px; line-height:77px; padding-right:10px; margin-right:15px; text-align:center; color:#555; font-size:18px; display:block; float:left;}
+.s_line .fx_title{ float:left;}
+.s_line .fx_title p{ font-size:24px; font-weight:bold; line-height:40px; color:#333;}
+.s_line .fx_title span{ display:inline-block; border-radius:3px; line-height:32px; text-align:center; font-size:18px; margin-right:8px; width:32px; height:32px;}
+.s_line .fx_title span.green{ background:#6ec038; color:#fff;}
+.s_line .fx_title span.yellow{ background:#fed700; color:#000;}
+.s_line .fx_title span.orange{ background:#ff944d; color:#fff;}
+.s_line .fx_title span.gray{ background:#ececec; color:#000;}
+
+.s_detail{ margin-bottom:30px;}
+.s_detail ul li{ line-height:35px; margin-bottom:5px; overflow:hidden; font-size:16px;}
+.s_detail ul li h2{ color:#666; font-size:18px; line-height:40px;}
+.s_detail ul li span{ width:105px; display:block; float:left; text-align:left; color:#888;}
+.s_detail ul li p{ float:left; color:#000;}
+.s_detail ul li p.o{ color:#ff4800;}
+.s_detail ul li span.b{ color:#000;}
+.s_detail ul li span.some1{ background:url("../images/bm.png")/*tpa=http://www.taojianz.com/images/bm.png*/ 0 5px no-repeat; display:inline-block; padding-left:30px;}
+.s_detail ul li span.some2{ background:url("../images/bm.png")/*tpa=http://www.taojianz.com/images/bm.png*/ 0 -35px no-repeat; display:inline-block; padding-left:30px;}
+.s_detail ul li span.some3{ background:url("../images/bm.png")/*tpa=http://www.taojianz.com/images/bm.png*/ 0 -75px no-repeat; display:inline-block; padding-left:30px;}
+.s_detail ul li span.some4{ background:url("../images/bm.png")/*tpa=http://www.taojianz.com/images/bm.png*/ 0 -119px no-repeat; display:inline-block; padding-left:30px;}
+.s_detail ul li span.some5{ background:url("../images/bm.png")/*tpa=http://www.taojianz.com/images/bm.png*/ 0 -160px no-repeat; display:inline-block; padding-left:30px;}
+.s_detail ul li span.some6{ display:inline-block; padding-left:25px;}
+.s_detail ul li span.some7{ background:url("../images/bm.png")/*tpa=http://www.taojianz.com/images/bm.png*/ 0 -230px no-repeat; display:inline-block; padding-left:30px;}
+.s_thanks{  font-size:16px; height:20px; line-height:20px; margin:10px 0; color:#000; background:url("../images/thanks.gif")/*tpa=http://www.taojianz.com/images/thanks.gif*/ left center no-repeat; padding-left:30px;}
+.s_tx{ width:560px; line-height:25px; font-size:14px; border:2px solid #d8d8d8; border-radius:10px; margin:15px 0 50px 0; padding:30px; position:relative; color:#8e8e8e;}
+.s_tx span{ left:50%; margin-left:-75px; display:block; position:absolute; top:-30px; background:#fff; color:#FF8A00; width:150px; text-align:center; height:50px; line-height:50px;}
+
+.s_table{ float:left; text-align:center;border-top:1px solid #dfdfdf;border-left:1px solid #dfdfdf; background:#fff; border-top-left-radius:5px;border-top-right-radius:5px; font-size:12px; color:#333;}
+.s_table th{ background:#f2f2f2;width:70px; height:38px; line-height:38px; border-bottom:1px solid #dfdfdf;border-right:1px solid #dfdfdf; font-weight:normal;}
+.s_table td{width:70px; height:48px; line-height:48px;border-bottom:1px solid #dfdfdf;border-right:1px solid #dfdfdf; }
+.s_table td.yes{ background:url("../images/td_yes.gif")/*tpa=http://www.taojianz.com/images/td_yes.gif*/ scroll 50% no-repeat;}
+
+/*发布*/
+.p_step{ border:1px solid #eee; background:#fff; width:1050px; float:right; padding:20px 0; position:relative; margin-bottom:20px;}
+.find-step{ background:url("../images/f_step_n.png")/*tpa=http://www.taojianz.com/images/f_step_n.png*/ 13px 0 no-repeat; width:600px; height:75px; margin:20px auto;}
+.find-step a{ color:#b7b7b7; float:left; width:85px; margin-right:182px;font-family: "微软雅黑"; font-size:14px; text-align:center; display:block;}
+.find-step a b{ color:#fff; display:block; width:40px; height:40px; margin-left:13px; text-align:center; margin-bottom:10px; line-height:40px;}
+.find-step a.last{ margin-right:0; text-align:right}
+.find-step a.se{ margin-right:160px;}
+.find-step a.last b{ margin-left:35px;}
+.find-step a.cur{ color:#ff8a00}
+.find-step a.cur b{ background:url("../images/f_step_c2.png")/*tpa=http://www.taojianz.com/images/f_step_c2.png*/ no-repeat;}
+
+.p-ok{ margin:120px 0 0 230px;}
+.p-ok b{ background:url("../images/reg_btn.png")/*tpa=http://www.taojianz.com/images/reg_btn.png*/ 0 -150px no-repeat;margin-right:15px; margin-top:10px;  width:50px; height:50px; display:inline-block; float:left;}
+.p-ok p{ color:#666; font-size:12px; text-align:left; overflow:hidden;}
+.p-ok p span{ display:block; line-height:40px; margin-bottom:10px; font-size:24px; font-family: "微软雅黑"; color:#000;}
+.p-ok p a{ margin-right:20px; font-size:14px; color:#666;}
+
+.select{ background:#fdfdfd; border:1px solid #d5d5d5; height:28px; margin-right:15px; vertical-align:middle; width:120px; color:#888;}
+.select option{ line-height:26px;}
+.none{ visibility:hidden;}
+.s_button{ width:60px; height:28px; line-height:28px; text-align:center; color:#fff; background:#FF8A00; border:1px solid #ff7800; border-radius:3px; display:inline-block; position:absolute; left:240px; top:0;}
+.s_button:hover{ background:#ff9b26;}
+
+.zwms{ width:540px; border:1px solid #dfdfdf; background:#fdfdfd; padding:15px; overflow:hidden;}
+.zwms .pv{ color:#999; line-height:20px; margin:0; overflow:hidden; width:100%}
+.zwms .pv b{  font-size:12px; margin-right:5px; font-weight:normal; float:left;}
+.zwms:hover{ border:1px solid #f0a753;}
+/*.zwms:hover .pv{ margin-bottom:15px;}*/
+.p_right .p_jl .p_line .p_xx textarea.tara{ background:#fdfdfd; border:none; height:50px; line-height:15px; padding:0 3px; width:300px; resize:none; display:none;}
+
+/*我的钱包*/
+.p_right .p_jl .p_tou{ margin:20px 0; overflow:hidden; height:120px;}
+.p_right .p_jl .p_tou img{ width:120px; height:120px; float:left; margin-right:40px;}
+.p_right .p_jl .p_tou p{ float:left; height:120px;}
+.p_right .p_jl .p_tou p span{ line-height:20px; margin:20px 0; display:block;}
+.p_right .p_jl .p_tou p a{ width:68px; height:28px; line-height:28px; font-size:14px; text-align:center; color:#fff; background:#FF8A00; border:1px solid #ff7800; border-radius:3px; display:block;}
+.p_right .p_jl .p_tou p a:hover{ background:#ff9b26;}
+.p_xiala ul li{ border-bottom:1px dashed #eee; margin-bottom:15px; overflow:hidden;}
+.p_xiala .p_xlt { overflow:hidden; margin-bottom:15px; line-height:25px;}
+.p_xiala .p_xlt span{ float:left; font-size:14px; color:#000;}
+.p_xiala .p_xlt a{ float:right; color:#fe8800; background:url("../images/arr_d.gif")/*tpa=http://www.taojianz.com/images/arr_d.gif*/ center right no-repeat; padding-right:12px; display:block; font-size:12px;}
+.p_xiala .p_xlt a.a_c{ background:url("../images/arr_u.gif")/*tpa=http://www.taojianz.com/images/arr_u.gif*/ center right no-repeat; padding-right:12px;  color:#ff5900;}
+.wd_30{ float:left; width:30px; margin-left:30px; height:47px; line-height:47px; font-size:12px;}
+.wd_30 input{ vertical-align:middle;}
+.wd_60{ float:left; width:60px;height:34px; line-height:34px; font-size:12px; background:#fff; margin-top:-9px;}
+.wd_60 input{ vertical-align:middle;}
+.wd_60_1{ float:left; width:60px;height:26px; line-height:26px; font-size:12px;}
+.wd_60_1 input{ vertical-align:middle;}
+
+.gz_bt{ height:44px; line-height:44px; overflow:hidden; margin:20px 30px;}
+.gz_bt span{ float:left; color:#888; font-size:16px; margin-right:15px; font-family:"宋体";}
+.gz_bt span b{ color:#FF8A00;}
+.gz_bt a{ float:right;width:135px; height:42px; line-height:42px; text-align:center; color:#fff; background:#FF8A00; border:1px solid #ff7800; border-radius:5px; font-size:16px; display:block; font-weight:bold;}
+.gz_bt a:hover{ background:#ff9b26;}
+.gz_input{ background:#fdfdfd; text-align:center; color:#FF8A00; border:1px solid #dcdcdc; height:24px; line-height:24px; padding:0 3px; margin-right:5px; margin-left:25px; width:120px; float:left;}
+.xl_a{ color:#fe8800; background:url("../images/arr_d.gif")/*tpa=http://www.taojianz.com/images/arr_d.gif*/ center right no-repeat; padding-right:12px; display:inline-block; font-size:12px;}
+.xl_a_c{ background:url("../images/arr_u.gif")/*tpa=http://www.taojianz.com/images/arr_u.gif*/ center right no-repeat; padding-right:12px;  color:#ff5900;}
+
+.subscribe2{ background:#fff;font-size:12px;margin:0px 30px;}
+.subscribe2 ul li{ overflow:hidden;border-bottom:1px solid #e8e8e8;}
+.subscribe2 ul li.on{ background:#fbfbfb; border:1px solid #e8e8e8;}
+.subscribe2 ul li:hover{background:#fbfbfb;}
+.subscribe2 .about{ padding:11px 0;height:26px; overflow:hidden;}
+.subscribe2 ul li span{font-size:12px;text-overflow:ellipsis;color:#333; overflow:hidden; white-space:nowrap;display:inline-block; text-align: center; height:26px; float:left;line-height:26px;}
+.subscribe2 ul li .gz_bj{ border-top:1px solid #e8e8e8; padding-left:200px; padding-top:50px;}
+.subscribe2 ul li a.gz_a{font-size:12px; margin:0 5px;height:24px; width:50px; line-height:24px; text-align:center; color:#fff;background:#FF8A00; border:1px solid #ff7800; border-radius:3px; display:inline-block;}
+.subscribe2 ul li a.gz_a:hover{ background:#fe9516;}
+.gz_line{ margin:10px 0; overflow:hidden;}
+.gz_line .gz_span{ width:70px; text-align:right; font-size:14px; line-height:30px; color:#333333; float:left;}
+.gz_line .gz_xx{ margin-left:20px;float:left; position:relative;}
+.gz_line .gz_xx .p_sex{ color:#000; height:30px; line-height:30px; font-size:14px;}
+.gz_line .gz_xx input[type=text]{ background:#fdfdfd; border:1px solid #dcdcdc; height:28px; line-height:28px; padding:0 3px; margin-right:10px; width:210px;}
+.gz_line .gz_xx input.on{ border:1px solid #ffb258;}
+.gz_line .gz_xx input.error{ border:1px solid #f66200;}
+.gz_line .gz_xx textarea{ background:#fdfdfd; border:1px solid #dcdcdc; height:100px; line-height:28px; padding:0 10px; width:350px; resize:none; color:#888;}
+.gz_line .gz_xx p{ color:#999999; line-height:35px; font-size:12px;}
+.gz_button{ width:116px; height:32px; line-height:32px; text-align:center; color:#FF8A00;background:#fbfbfb; border:1px solid #ff7800; font-size:14px; border-radius:5px; margin:30px 0 50px 15px; display:inline-block;}
+.gz_button:hover{ background:#ff8a00; color:#fff;}
+.gz_button2{ width:106px; height:32px; line-height:32px; text-align:center; color:#fff; background:#FF8A00;  border:1px solid #ff7800; font-size:14px; border-radius:5px; margin:30px 0 50px 80px; display:inline-block;}
+.gz_button2:hover{ background:#ff9b26;}
+.jjf{ width:30px; height:30px; display:inline-block; margin-right:8px; background:url("../images/jjf.png")/*tpa=http://www.taojianz.com/images/jjf.png*/ no-repeat; float:left;}
+/**LJ 地址COPY*/
+.post_send_more{ display:none; width:216px;border:1px solid #ccc; border-top:none; position:absolute; left:0; top:30px; background:#fdfdfd; z-index:999; font-size:12px;}
+.post_top_menu{ width:216px;border-bottom:1px solid #ccc; height:30px;}
+.post_top_menu li{height:30px; line-height:30px;width:71px;font-size:12px;text-align:center;border-bottom:1px solid #ccc;border-right:1px solid #ccc; background:#eee; float:left;}
+.post_top_menu li.current{ background:#fdfdfd; border-bottom:1px solid #fdfdfd; color:#FF8A00; }
+.post_top_menu li.current span{ color:#FF8A00}
+.post_top_menu a{ float:right; font-size:30px; line-height:30px; margin-right:10px;}
+.post_nr_menu { width:216px;}
+.post_nr_menu .aa{ display: block;}
+.post_nr_menu .hidee{ display:none;}
+.post_nr_menu ul li{ float:left; line-height:20px; margin:5px 0; width:100%;}
+.post_nr_menu ul li i{ color:#999; width:40px; text-align:center; margin-top:5px; height:20px; line-height:20px; display:block; float:left; font-style:normal;}
+.post_nr_menu ul li p{ float:left; width:160px;}
+.post_nr_menu ul li a{ padding:0 3px; display:inline-block; color:#333;border:1px solid #fdfdfd; text-align:center;height:20px; line-height:20px; margin:5px 0px 5px 5px;}
+.post_nr_menu ul li a:hover{ border:1px solid #dadbdd; height:20px; line-height:20px;}
+.post_nr_menu ul li a:active{ border:1px solid #fe8900; background:#fe8900; height:20px; line-height:20px; color:#fff}
+/**交易记录*/
+.subscribe3{ width:100%; background:#fff;font-size:12px;}
+.subscribe3 ul li{ height:48px;}
+.subscribe3 ul li:hover{ background:#fbfbfb; border-bottom:1px solid #e8e8e8;border-top:1px solid #e8e8e8;height:46px;}
+.subscribe3 .jy_about {padding: 11px 0;border-bottom: 1px solid #e8e8e8;height: 26px;overflow: hidden;  }
+.subscribe3 ul li:hover .jy_about{ border-bottom:none;height:26px;padding:10px 0 11px 0;}
+/*.subscribe3 .about{margin:0px 30px; padding:11px 0;border-bottom:1px solid #e8e8e8;height:26px; overflow:hidden;}*/
+/*.subscribe3 ul li a{ text-align:center; }*/
+.subscribe3 ul li a.s{font-size:12px; text-overflow:ellipsis; color:#333; overflow:hidden; white-space:nowrap;display:inline-block; text-align: center; height:26px; float:left; line-height:26px;}
+.subscribe3 ul li span{font-size:12px;text-overflow:ellipsis;color:#333; overflow:hidden; white-space:nowrap;display:inline-block; text-align: center; height:26px; float:left;line-height:26px;}
+/*.subscribe3 ul li a.btn2{font-size:12px; width:67px; height:24px; line-height:24px; margin-left:10px; text-align:center; color:#fff; background:#FF8A00; border:1px solid #ff7800; border-radius:3px; display:inline-block;}
+.subscribe3 ul li a.btn2:hover{ background:#ff9b26;}
+.subscribe3 ul li a.btn3{font-size:12px; margin:0 5px;height:24px; line-height:24px; text-align:center; color:#fe8400; display:inline-block;}
+.subscribe3 ul li a.btn3:hover{ color:#ff5a01;}*/ 
+.subscribe3 ul li a.ac {font-size: 12px;text-overflow: ellipsis;color: #333;overflow: hidden;white-space: nowrap;display: inline-block;text-align: center;height: 46px;float: left;line-height: 16px;} 
+.subscribe3 ul li a.ac p { color: #888;}
+.subscribe3 ul li a.ac b { font-weight: normal;} 
+.p_right .p_jy {margin: 35px 0 0 0px;  }
+.jy_p_sq {width: 898px;  }
+.jy_query {margin-left: 75px;  }
+.jy_sub_title {height: 16px;padding: 9px 0;background: #fbfbfb;margin: 15px 0px;  }
+.jy_sub_title span {
+border-left: 1px solid #d8d8d8;
+display: inline-block;
+text-align: center;
+height: 16px;
+float: left;
+font-size: 14px;
+line-height: 16px;
+  }
+
+  .jy_time {
+margin-left: -35px;
+  }
+
+
+  .pagination-container {
+margin-top: -30px;
+  }
+
+  .screenBox dl dd a.selected {
+color: #FF7800;
+  }
+
+ 
+
+/*提现成功提示*/
+
+.tip_account {
+  display: inline-block;
+  min-height: 210px;
+  background: #d4d4d4;
+  border-radius: 8px;
+  z-index: 19891031;
+  position: fixed;
+  top: 50%;
+  margin-top: -140px;
+  left: 50%;
+  margin-left: -180px;
+  display: none;
+ }
+ .tip_account_c {
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid #c1c1c1;
+  min-height: 205px;
+  width: 360px;
+  margin: 3px;
+  padding-left: 30px;
+ }
+  .tip_account_c .tip_account_l_c {
+line-height: 20px;
+margin: 10px 0px;
+
+  }
+.tip_account_c .tip_account_l_c div{
+ line-height: 12px;
+ margin: 10px 0px; 
+ float:left;
+}
+  .tip_account_c .tip_account_l_c div a{ 
+width:112px;
+color: #555555;
+float:left;
+font-size:12px;
+  }
+.tip_account_c .tip_account_l_c div b {
+  font-weight: bold;
+  color: black;
+  font-size: 14px;
+ }
+.tip_account_c .l_b {
+float:left;
+overflow: hidden;
+height: 30px;
+margin: 15px 0;
+margin-left: 100px;
+text-decoration:none;
+  }
+.tip_account_c .l_close a {
+float: right;
+margin-right: 30px;
+margin-top: -90px;
+width: 15px;
+height: 15px;
+display: block;
+background: url("../images/close.png")/*tpa=http://www.taojianz.com/images/close.png*/ top no-repeat;
+  }
+
+.tip_account_c .l_close a:hover {
+ background-position: bottom;
+}
+/**岗位管理*/
+.wd_80{ width:80px; float:left; text-align:center; line-height:47px; color:#666;}  
+.wd_70{ width:70px; float:left; text-align:center; line-height:47px; color:#666;}  

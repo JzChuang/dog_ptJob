@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ptjob.dao.CollectMapper">
+  <resultMap id="BaseResultMap" type="com.ptjob.entity.Collect">
+    <id column="collectId" jdbcType="INTEGER" property="collectId" />
+    <result column="jobId" jdbcType="INTEGER" property="jobId" />
+    <result column="userName" jdbcType="VARCHAR" property="userName" />
+    <result column="collectTime" jdbcType="VARCHAR" property="collectTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    collectId, jobId, userName, collectTime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from collect
+    where collectId = #{collectId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from collect
+    where collectId = #{collectId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.ptjob.entity.Collect">
+    insert into collect (collectId, jobId, userName, 
+      collectTime)
+    values (#{collectId,jdbcType=INTEGER}, #{jobId,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, 
+      #{collectTime,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ptjob.entity.Collect">
+    insert into collect
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="collectId != null">
+        collectId,
+      </if>
+      <if test="jobId != null">
+        jobId,
+      </if>
+      <if test="userName != null">
+        userName,
+      </if>
+      <if test="collectTime != null">
+        collectTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="collectId != null">
+        #{collectId,jdbcType=INTEGER},
+      </if>
+      <if test="jobId != null">
+        #{jobId,jdbcType=INTEGER},
+      </if>
+      <if test="userName != null">
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="collectTime != null">
+        #{collectTime,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ptjob.entity.Collect">
+    update collect
+    <set>
+      <if test="jobId != null">
+        jobId = #{jobId,jdbcType=INTEGER},
+      </if>
+      <if test="userName != null">
+        userName = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="collectTime != null">
+        collectTime = #{collectTime,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where collectId = #{collectId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ptjob.entity.Collect">
+    update collect
+    set jobId = #{jobId,jdbcType=INTEGER},
+      userName = #{userName,jdbcType=VARCHAR},
+      collectTime = #{collectTime,jdbcType=VARCHAR}
+    where collectId = #{collectId,jdbcType=INTEGER}
+  </update>
+  
+  
+   <select id="selectCollection" parameterType="com.ptjob.entity.Collect" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from collect
+    where 1=1
+       and jobId = #{jobId,jdbcType=INTEGER}
+       and userName = #{userName,jdbcType=VARCHAR}
+    
+  </select>
+</mapper>

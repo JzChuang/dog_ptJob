@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ptjob.dao.JobCollectMapper">
+  <resultMap id="BaseResultMap" type="com.ptjob.entity.JobCollect">
+    <result column="jobId" jdbcType="INTEGER" property="jobId" />
+    <result column="studentName" jdbcType="VARCHAR" property="studentName" />
+    <result column="collectTime" jdbcType="VARCHAR" property="collectTime" />
+    <result column="jobTitle" jdbcType="VARCHAR" property="jobTitle" />
+    <result column="userName" jdbcType="VARCHAR" property="userName" />
+    <result column="companyName" jdbcType="VARCHAR" property="companyName" />
+    <result column="jobType" jdbcType="VARCHAR" property="jobType" />
+    <result column="area" jdbcType="VARCHAR" property="area" />
+    <result column="detailAdress" jdbcType="VARCHAR" property="detailAdress" />
+    <result column="contact" jdbcType="VARCHAR" property="contact" />
+    <result column="phoneNum" jdbcType="VARCHAR" property="phoneNum" />
+    <result column="peopleNum" jdbcType="VARCHAR" property="peopleNum" />
+    <result column="sex" jdbcType="VARCHAR" property="sex" />
+    <result column="salary" jdbcType="VARCHAR" property="salary" />
+    <result column="workTime" jdbcType="VARCHAR" property="workTime" />
+    <result column="jobRemark" jdbcType="VARCHAR" property="jobRemark" />
+    <result column="publishTime" jdbcType="VARCHAR" property="publishTime" />
+    <result column="sicheck" jdbcType="VARCHAR" property="sicheck" />
+    <result column="wanted" jdbcType="VARCHAR" property="wanted" />
+  </resultMap>
+  <insert id="insert" parameterType="com.ptjob.entity.JobCollect">
+    insert into v_jobcollect (jobId, studentName, collectTime, 
+      jobTitle, userName, companyName, 
+      jobType, area, detailAdress, 
+      contact, phoneNum, peopleNum, 
+      sex, salary, workTime, 
+      jobRemark, publishTime, sicheck, 
+      wanted)
+    values (#{jobId,jdbcType=INTEGER}, #{studentName,jdbcType=VARCHAR}, #{collectTime,jdbcType=VARCHAR}, 
+      #{jobTitle,jdbcType=VARCHAR}, #{userName,jdbcType=VARCHAR}, #{companyName,jdbcType=VARCHAR}, 
+      #{jobType,jdbcType=VARCHAR}, #{area,jdbcType=VARCHAR}, #{detailAdress,jdbcType=VARCHAR}, 
+      #{contact,jdbcType=VARCHAR}, #{phoneNum,jdbcType=VARCHAR}, #{peopleNum,jdbcType=VARCHAR}, 
+      #{sex,jdbcType=VARCHAR}, #{salary,jdbcType=VARCHAR}, #{workTime,jdbcType=VARCHAR}, 
+      #{jobRemark,jdbcType=VARCHAR}, #{publishTime,jdbcType=VARCHAR}, #{sicheck,jdbcType=VARCHAR}, 
+      #{wanted,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ptjob.entity.JobCollect">
+    insert into v_jobcollect
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="jobId != null">
+        jobId,
+      </if>
+      <if test="studentName != null">
+        studentName,
+      </if>
+      <if test="collectTime != null">
+        collectTime,
+      </if>
+      <if test="jobTitle != null">
+        jobTitle,
+      </if>
+      <if test="userName != null">
+        userName,
+      </if>
+      <if test="companyName != null">
+        companyName,
+      </if>
+      <if test="jobType != null">
+        jobType,
+      </if>
+      <if test="area != null">
+        area,
+      </if>
+      <if test="detailAdress != null">
+        detailAdress,
+      </if>
+      <if test="contact != null">
+        contact,
+      </if>
+      <if test="phoneNum != null">
+        phoneNum,
+      </if>
+      <if test="peopleNum != null">
+        peopleNum,
+      </if>
+      <if test="sex != null">
+        sex,
+      </if>
+      <if test="salary != null">
+        salary,
+      </if>
+      <if test="workTime != null">
+        workTime,
+      </if>
+      <if test="jobRemark != null">
+        jobRemark,
+      </if>
+      <if test="publishTime != null">
+        publishTime,
+      </if>
+      <if test="sicheck != null">
+        sicheck,
+      </if>
+      <if test="wanted != null">
+        wanted,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="jobId != null">
+        #{jobId,jdbcType=INTEGER},
+      </if>
+      <if test="studentName != null">
+        #{studentName,jdbcType=VARCHAR},
+      </if>
+      <if test="collectTime != null">
+        #{collectTime,jdbcType=VARCHAR},
+      </if>
+      <if test="jobTitle != null">
+        #{jobTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="userName != null">
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="companyName != null">
+        #{companyName,jdbcType=VARCHAR},
+      </if>
+      <if test="jobType != null">
+        #{jobType,jdbcType=VARCHAR},
+      </if>
+      <if test="area != null">
+        #{area,jdbcType=VARCHAR},
+      </if>
+      <if test="detailAdress != null">
+        #{detailAdress,jdbcType=VARCHAR},
+      </if>
+      <if test="contact != null">
+        #{contact,jdbcType=VARCHAR},
+      </if>
+      <if test="phoneNum != null">
+        #{phoneNum,jdbcType=VARCHAR},
+      </if>
+      <if test="peopleNum != null">
+        #{peopleNum,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null">
+        #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="salary != null">
+        #{salary,jdbcType=VARCHAR},
+      </if>
+      <if test="workTime != null">
+        #{workTime,jdbcType=VARCHAR},
+      </if>
+      <if test="jobRemark != null">
+        #{jobRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="publishTime != null">
+        #{publishTime,jdbcType=VARCHAR},
+      </if>
+      <if test="sicheck != null">
+        #{sicheck,jdbcType=VARCHAR},
+      </if>
+      <if test="wanted != null">
+        #{wanted,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  
+  
+   <select id="getJobConnectionTotal" parameterType="com.ptjob.entity.JobCollect" resultType="int">
+    select 
+    count(1)
+    from v_jobcollect where 1=1
+			
+			<if test="studentName!= null">
+				and studentName like concat('%',#{studentName},'%')
+			</if>
+			
+  </select>
+  <!-- 根据各种条件进行分页查询 -->
+   <select id="getJobCollectionByPages" parameterType="com.ptjob.entity.JobCollect"  resultMap="BaseResultMap">
+    select *
+    from v_jobcollect where 1=1
+			
+			<if test="studentName!= null">
+				and studentName like concat('%',#{studentName},'%')
+			</if>
+			
+
+   limit #{start},#{pagesize}
+
+  </select>
+  
+   <delete id="deleteCollection" parameterType="com.ptjob.entity.JobCollect">
+  	delete from collect where 1=1
+  	and jobId =  #{jobId,jdbcType=INTEGER}
+  	and userName = #{userName,jdbcType=VARCHAR}
+  </delete>
+  
+</mapper>

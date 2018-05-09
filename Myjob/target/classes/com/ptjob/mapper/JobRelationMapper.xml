@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ptjob.dao.JobRelationMapper">
+  <resultMap id="BaseResultMap" type="com.ptjob.entity.JobRelation">
+    <result column="jobId" jdbcType="INTEGER" property="jobId" />
+    <result column="jobTitle" jdbcType="VARCHAR" property="jobTitle" />
+    <result column="userName" jdbcType="VARCHAR" property="userName" />
+    <result column="companyName" jdbcType="VARCHAR" property="companyName" />
+    <result column="jobType" jdbcType="VARCHAR" property="jobType" />
+    <result column="area" jdbcType="VARCHAR" property="area" />
+    <result column="detailAdress" jdbcType="VARCHAR" property="detailAdress" />
+    <result column="contact" jdbcType="VARCHAR" property="contact" />
+    <result column="phoneNum" jdbcType="VARCHAR" property="phoneNum" />
+    <result column="peopleNum" jdbcType="VARCHAR" property="peopleNum" />
+    <result column="sex" jdbcType="VARCHAR" property="sex" />
+    <result column="salary" jdbcType="VARCHAR" property="salary" />
+    <result column="workTime" jdbcType="VARCHAR" property="workTime" />
+    <result column="jobRemark" jdbcType="VARCHAR" property="jobRemark" />
+    <result column="publishTime" jdbcType="VARCHAR" property="publishTime" />
+    <result column="sicheck" jdbcType="VARCHAR" property="sicheck" />
+    <result column="wanted" jdbcType="VARCHAR" property="wanted" />
+    <result column="studentName" jdbcType="VARCHAR" property="studentName" />
+    <result column="studentflag" jdbcType="VARCHAR" property="studentflag" />
+    <result column="businessflag" jdbcType="VARCHAR" property="businessflag" />
+    <result column="stutime" jdbcType="VARCHAR" property="stutime" />
+     <result column="nickName" jdbcType="VARCHAR" property="nickName" />
+  </resultMap>
+	<select id="selectByStudentName"  resultMap="BaseResultMap">
+    select * 
+    from v_jobrelation
+    where studentName = #{studentName}
+  	</select>
+  	<select id="selectByUserName"  resultMap="BaseResultMap">
+    select * 
+    from v_jobrelation
+    where userName = #{userName}
+  	</select>
+  	
+  	
+  	  <!-- 查询各种情况下的记录总数-->
+    <select id="getJobRelationTotal" parameterType="com.ptjob.entity.JobRelationPage" resultType="int">
+    select 
+    count(1)
+    from v_jobrelation where 1=1
+    		<if test="jobId!= 0">
+				and jobId like concat('%',#{jobId},'%')
+			</if>
+			<if test="userName!= null">
+				and userName like concat('%',#{userName},'%')
+			</if>
+			<if test="studentName!= null">
+				and studentName like concat('%',#{studentName},'%')
+			</if>
+			<if test="studentflag!= null">
+				and studentflag like concat('%',#{studentflag},'%')
+			</if>
+			<if test="businessflag!=null">
+				and businessflag like concat('%',#{businessflag},'%')
+			</if>
+  </select>
+  <!-- 根据各种条件进行分页查询 -->
+   <select id="getJobRelationByPages" parameterType="com.ptjob.entity.JobRelationPage"  resultMap="BaseResultMap">
+    select *
+    from v_jobrelation where 1=1
+    <if test="jobId!= 0">
+				and jobId like concat('%',#{jobId},'%')
+			</if>
+			<if test="userName!= null">
+				and userName like concat('%',#{userName},'%')
+			</if>
+			<if test="studentName!= null">
+				and studentName like concat('%',#{studentName},'%')
+			</if>
+			<if test="studentflag!= null">
+				and studentflag like concat('%',#{studentflag},'%')
+			</if>
+			<if test="businessflag!=null">
+				and businessflag like concat('%',#{businessflag},'%')
+			</if>
+
+   limit #{start},#{pagesize}
+
+  </select>
+  <!-- 录用学生 -->
+  <update id="hireStudent" parameterType="com.ptjob.entity.JobRelationPage">
+  	update relation set businessflag = #{businessflag}
+  	 where 1=1
+       and jobId = #{jobId,jdbcType=INTEGER}
+       and studentName = #{studentName,jdbcType=VARCHAR}
+  </update>
+  
+  <!-- 取消申请 -->
+  <delete id="cancleApplication" parameterType="com.ptjob.entity.JobRelation">
+  	delete from relation where 1=1
+  	and jobId =  #{jobId,jdbcType=INTEGER}
+  	and studentName = #{studentName,jdbcType=VARCHAR}
+  </delete>
+  
+</mapper>

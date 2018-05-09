@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ptjob.dao.CompanyMapper">
+  <resultMap id="BaseResultMap" type="com.ptjob.entity.Company">
+    <id column="companyId" jdbcType="INTEGER" property="companyId" />
+    <result column="userName" jdbcType="VARCHAR" property="userName" />
+    <result column="companyName" jdbcType="VARCHAR" property="companyName" />
+    <result column="companyAdress" jdbcType="VARCHAR" property="companyAdress" />
+    <result column="detailAdress" jdbcType="VARCHAR" property="detailAdress" />
+    <result column="companyRemark" jdbcType="VARCHAR" property="companyRemark" />
+    <result column="contact" jdbcType="VARCHAR" property="contact" />
+    <result column="phonenum" jdbcType="VARCHAR" property="phonenum" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    companyId, userName, companyName, companyAdress, detailAdress, companyRemark, contact, 
+    phonenum, email
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from company
+    where companyId = #{companyId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from company
+    where companyId = #{companyId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.ptjob.entity.Company">
+    insert into company (companyId, userName, companyName, 
+      companyAdress, detailAdress, companyRemark, 
+      contact, phonenum, email
+      )
+    values (#{companyId,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, #{companyName,jdbcType=VARCHAR}, 
+      #{companyAdress,jdbcType=VARCHAR}, #{detailAdress,jdbcType=VARCHAR}, #{companyRemark,jdbcType=VARCHAR}, 
+      #{contact,jdbcType=VARCHAR}, #{phonenum,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.ptjob.entity.Company">
+    insert into company
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="companyId != null">
+        companyId,
+      </if>
+      <if test="userName != null">
+        userName,
+      </if>
+      <if test="companyName != null">
+        companyName,
+      </if>
+      <if test="companyAdress != null">
+        companyAdress,
+      </if>
+      <if test="detailAdress != null">
+        detailAdress,
+      </if>
+      <if test="companyRemark != null">
+        companyRemark,
+      </if>
+      <if test="contact != null">
+        contact,
+      </if>
+      <if test="phonenum != null">
+        phonenum,
+      </if>
+      <if test="email != null">
+        email,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="companyId != null">
+        #{companyId,jdbcType=INTEGER},
+      </if>
+      <if test="userName != null">
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="companyName != null">
+        #{companyName,jdbcType=VARCHAR},
+      </if>
+      <if test="companyAdress != null">
+        #{companyAdress,jdbcType=VARCHAR},
+      </if>
+      <if test="detailAdress != null">
+        #{detailAdress,jdbcType=VARCHAR},
+      </if>
+      <if test="companyRemark != null">
+        #{companyRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="contact != null">
+        #{contact,jdbcType=VARCHAR},
+      </if>
+      <if test="phonenum != null">
+        #{phonenum,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        #{email,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ptjob.entity.Company">
+    update company
+    <set>
+      <if test="userName != null">
+        userName = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="companyName != null">
+        companyName = #{companyName,jdbcType=VARCHAR},
+      </if>
+      <if test="companyAdress != null">
+        companyAdress = #{companyAdress,jdbcType=VARCHAR},
+      </if>
+      <if test="detailAdress != null">
+        detailAdress = #{detailAdress,jdbcType=VARCHAR},
+      </if>
+      <if test="companyRemark != null">
+        companyRemark = #{companyRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="contact != null">
+        contact = #{contact,jdbcType=VARCHAR},
+      </if>
+      <if test="phonenum != null">
+        phonenum = #{phonenum,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where companyId = #{companyId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ptjob.entity.Company">
+    update company
+    set userName = #{userName,jdbcType=VARCHAR},
+      companyName = #{companyName,jdbcType=VARCHAR},
+      companyAdress = #{companyAdress,jdbcType=VARCHAR},
+      detailAdress = #{detailAdress,jdbcType=VARCHAR},
+      companyRemark = #{companyRemark,jdbcType=VARCHAR},
+      contact = #{contact,jdbcType=VARCHAR},
+      phonenum = #{phonenum,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR}
+    where companyId = #{companyId,jdbcType=INTEGER}
+  </update>
+  <!-- 根据用户名查询公司信息 -->
+  <select id="selectCompanyByUser" resultMap="BaseResultMap">
+  select 
+    <include refid="Base_Column_List" />
+    from company
+    where userName = #{userName}
+  </select>
+  <!-- 根据用户名更新公司信息 -->
+  <update id="updateByUser" parameterType="com.ptjob.entity.Company">
+    update company
+    <set> 
+    	<if test="companyName != null">
+        companyName = #{companyName,jdbcType=VARCHAR},
+      </if>
+      <if test="companyAdress != null">
+        companyAdress = #{companyAdress,jdbcType=VARCHAR},
+      </if>
+      <if test="detailAdress != null">
+        detailAdress = #{detailAdress,jdbcType=VARCHAR},
+      </if>
+      <if test="companyRemark != null">
+        companyRemark = #{companyRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="contact != null">
+        contact = #{contact,jdbcType=VARCHAR},
+      </if>
+      <if test="phonenum != null">
+        phonenum = #{phonenum,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+    </set>
+  where userName = #{userName}
+  </update>
+</mapper>

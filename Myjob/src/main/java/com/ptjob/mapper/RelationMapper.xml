@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ptjob.dao.RelationMapper">
+  <resultMap id="BaseResultMap" type="com.ptjob.entity.Relation">
+    <id column="relationId" jdbcType="INTEGER" property="relationId" />
+    <result column="jobId" jdbcType="INTEGER" property="jobId" />
+    <result column="studentName" jdbcType="VARCHAR" property="studentName" />
+    <result column="studentflag" jdbcType="VARCHAR" property="studentflag" />
+    <result column="businessflag" jdbcType="VARCHAR" property="businessflag" />
+    <result column="stutime" jdbcType="VARCHAR" property="stutime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    relationId, jobId, studentName, studentflag, businessflag, stutime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from relation
+    where relationId = #{relationId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from relation
+    where relationId = #{relationId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.ptjob.entity.Relation">
+    insert into relation (relationId, jobId, studentName, 
+      studentflag, businessflag, stutime
+      )
+    values (#{relationId,jdbcType=INTEGER}, #{jobId,jdbcType=INTEGER}, #{studentName,jdbcType=VARCHAR}, 
+      #{studentflag,jdbcType=VARCHAR}, #{businessflag,jdbcType=VARCHAR}, #{stutime,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.ptjob.entity.Relation">
+    insert into relation
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="relationId != null">
+        relationId,
+      </if>
+      <if test="jobId != null">
+        jobId,
+      </if>
+      <if test="studentName != null">
+        studentName,
+      </if>
+      <if test="studentflag != null">
+        studentflag,
+      </if>
+      <if test="businessflag != null">
+        businessflag,
+      </if>
+      <if test="stutime != null">
+        stutime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="relationId != null">
+        #{relationId,jdbcType=INTEGER},
+      </if>
+      <if test="jobId != null">
+        #{jobId,jdbcType=INTEGER},
+      </if>
+      <if test="studentName != null">
+        #{studentName,jdbcType=VARCHAR},
+      </if>
+      <if test="studentflag != null">
+        #{studentflag,jdbcType=VARCHAR},
+      </if>
+      <if test="businessflag != null">
+        #{businessflag,jdbcType=VARCHAR},
+      </if>
+      <if test="stutime != null">
+        #{stutime,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ptjob.entity.Relation">
+    update relation
+    <set>
+      <if test="jobId != null">
+        jobId = #{jobId,jdbcType=INTEGER},
+      </if>
+      <if test="studentName != null">
+        studentName = #{studentName,jdbcType=VARCHAR},
+      </if>
+      <if test="studentflag != null">
+        studentflag = #{studentflag,jdbcType=VARCHAR},
+      </if>
+      <if test="businessflag != null">
+        businessflag = #{businessflag,jdbcType=VARCHAR},
+      </if>
+      <if test="stutime != null">
+        stutime = #{stutime,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where relationId = #{relationId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ptjob.entity.Relation">
+    update relation
+    set jobId = #{jobId,jdbcType=INTEGER},
+      studentName = #{studentName,jdbcType=VARCHAR},
+      studentflag = #{studentflag,jdbcType=VARCHAR},
+      businessflag = #{businessflag,jdbcType=VARCHAR},
+      stutime = #{stutime,jdbcType=VARCHAR}
+    where relationId = #{relationId,jdbcType=INTEGER}
+  </update>
+  
+  
+  <update id="updateByJobIdAndUserName" parameterType="com.ptjob.entity.Relation">
+    update relation
+    <set>
+      <if test="studentName != null">
+        studentName = #{studentName,jdbcType=VARCHAR},
+      </if>
+      <if test="studentflag != null">
+        studentflag = #{studentflag,jdbcType=VARCHAR},
+      </if>
+      <if test="businessflag != null">
+        businessflag = #{businessflag,jdbcType=VARCHAR},
+      </if>
+      <if test="stutime != null">
+        stutime = #{stutime,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where jobId = #{jobId,jdbcType=INTEGER}
+    and studentName = #{studentName}
+  </update>
+  
+  
+   <select id="selectByRecord" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from relation
+    where jobId = #{jobId,jdbcType=INTEGER}
+    and studentName = #{studentName}
+    and studentflag = '是'
+  </select>
+</mapper>

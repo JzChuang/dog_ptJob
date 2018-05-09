@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ptjob.dao.JobMapper">
+  <resultMap id="BaseResultMap" type="com.ptjob.entity.Job">
+    <id column="jobId" jdbcType="INTEGER" property="jobId" />
+    <result column="jobTitle" jdbcType="VARCHAR" property="jobTitle" />
+    <result column="userName" jdbcType="VARCHAR" property="userName" />
+    <result column="companyName" jdbcType="VARCHAR" property="companyName" />
+    <result column="jobType" jdbcType="VARCHAR" property="jobType" />
+    <result column="area" jdbcType="VARCHAR" property="area" />
+    <result column="detailAdress" jdbcType="VARCHAR" property="detailAdress" />
+    <result column="contact" jdbcType="VARCHAR" property="contact" />
+    <result column="phoneNum" jdbcType="VARCHAR" property="phoneNum" />
+    <result column="peopleNum" jdbcType="VARCHAR" property="peopleNum" />
+    <result column="sex" jdbcType="VARCHAR" property="sex" />
+    <result column="salary" jdbcType="VARCHAR" property="salary" />
+    <result column="workTime" jdbcType="VARCHAR" property="workTime" />
+    <result column="jobRemark" jdbcType="VARCHAR" property="jobRemark" />
+    <result column="publishTime" jdbcType="VARCHAR" property="publishTime" />
+    <result column="sicheck" jdbcType="VARCHAR" property="sicheck" />
+    <result column="wanted" jdbcType="VARCHAR" property="wanted" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    jobId, jobTitle, userName, companyName, jobType, area, detailAdress, contact, phoneNum, 
+    peopleNum, sex, salary, workTime, jobRemark, publishTime, sicheck, wanted
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from job
+    where jobId = #{jobId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from job
+    where jobId = #{jobId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.ptjob.entity.Job">
+    insert into job (jobId, jobTitle, userName, 
+      companyName, jobType, area, 
+      detailAdress, contact, phoneNum, 
+      peopleNum, sex, salary, 
+      workTime, jobRemark, publishTime, 
+      sicheck, wanted)
+    values (#{jobId,jdbcType=INTEGER}, #{jobTitle,jdbcType=VARCHAR}, #{userName,jdbcType=VARCHAR}, 
+      #{companyName,jdbcType=VARCHAR}, #{jobType,jdbcType=VARCHAR}, #{area,jdbcType=VARCHAR}, 
+      #{detailAdress,jdbcType=VARCHAR}, #{contact,jdbcType=VARCHAR}, #{phoneNum,jdbcType=VARCHAR}, 
+      #{peopleNum,jdbcType=VARCHAR}, #{sex,jdbcType=VARCHAR}, #{salary,jdbcType=VARCHAR}, 
+      #{workTime,jdbcType=VARCHAR}, #{jobRemark,jdbcType=VARCHAR}, #{publishTime,jdbcType=VARCHAR}, 
+      #{sicheck,jdbcType=VARCHAR}, #{wanted,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ptjob.entity.Job">
+    insert into job
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="jobId != null">
+        jobId,
+      </if>
+      <if test="jobTitle != null">
+        jobTitle,
+      </if>
+      <if test="userName != null">
+        userName,
+      </if>
+      <if test="companyName != null">
+        companyName,
+      </if>
+      <if test="jobType != null">
+        jobType,
+      </if>
+      <if test="area != null">
+        area,
+      </if>
+      <if test="detailAdress != null">
+        detailAdress,
+      </if>
+      <if test="contact != null">
+        contact,
+      </if>
+      <if test="phoneNum != null">
+        phoneNum,
+      </if>
+      <if test="peopleNum != null">
+        peopleNum,
+      </if>
+      <if test="sex != null">
+        sex,
+      </if>
+      <if test="salary != null">
+        salary,
+      </if>
+      <if test="workTime != null">
+        workTime,
+      </if>
+      <if test="jobRemark != null">
+        jobRemark,
+      </if>
+      <if test="publishTime != null">
+        publishTime,
+      </if>
+      <if test="sicheck != null">
+        sicheck,
+      </if>
+      <if test="wanted != null">
+        wanted,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="jobId != null">
+        #{jobId,jdbcType=INTEGER},
+      </if>
+      <if test="jobTitle != null">
+        #{jobTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="userName != null">
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="companyName != null">
+        #{companyName,jdbcType=VARCHAR},
+      </if>
+      <if test="jobType != null">
+        #{jobType,jdbcType=VARCHAR},
+      </if>
+      <if test="area != null">
+        #{area,jdbcType=VARCHAR},
+      </if>
+      <if test="detailAdress != null">
+        #{detailAdress,jdbcType=VARCHAR},
+      </if>
+      <if test="contact != null">
+        #{contact,jdbcType=VARCHAR},
+      </if>
+      <if test="phoneNum != null">
+        #{phoneNum,jdbcType=VARCHAR},
+      </if>
+      <if test="peopleNum != null">
+        #{peopleNum,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null">
+        #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="salary != null">
+        #{salary,jdbcType=VARCHAR},
+      </if>
+      <if test="workTime != null">
+        #{workTime,jdbcType=VARCHAR},
+      </if>
+      <if test="jobRemark != null">
+        #{jobRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="publishTime != null">
+        #{publishTime,jdbcType=VARCHAR},
+      </if>
+      <if test="sicheck != null">
+        #{sicheck,jdbcType=VARCHAR},
+      </if>
+      <if test="wanted != null">
+        #{wanted,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ptjob.entity.Job">
+    update job
+    <set>
+      <if test="jobTitle != null">
+        jobTitle = #{jobTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="userName != null">
+        userName = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="companyName != null">
+        companyName = #{companyName,jdbcType=VARCHAR},
+      </if>
+      <if test="jobType != null">
+        jobType = #{jobType,jdbcType=VARCHAR},
+      </if>
+      <if test="area != null">
+        area = #{area,jdbcType=VARCHAR},
+      </if>
+      <if test="detailAdress != null">
+        detailAdress = #{detailAdress,jdbcType=VARCHAR},
+      </if>
+      <if test="contact != null">
+        contact = #{contact,jdbcType=VARCHAR},
+      </if>
+      <if test="phoneNum != null">
+        phoneNum = #{phoneNum,jdbcType=VARCHAR},
+      </if>
+      <if test="peopleNum != null">
+        peopleNum = #{peopleNum,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null">
+        sex = #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="salary != null">
+        salary = #{salary,jdbcType=VARCHAR},
+      </if>
+      <if test="workTime != null">
+        workTime = #{workTime,jdbcType=VARCHAR},
+      </if>
+      <if test="jobRemark != null">
+        jobRemark = #{jobRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="publishTime != null">
+        publishTime = #{publishTime,jdbcType=VARCHAR},
+      </if>
+      <if test="sicheck != null">
+        sicheck = #{sicheck,jdbcType=VARCHAR},
+      </if>
+      <if test="wanted != null">
+        wanted = #{wanted,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where jobId = #{jobId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ptjob.entity.Job">
+    update job
+    set jobTitle = #{jobTitle,jdbcType=VARCHAR},
+      userName = #{userName,jdbcType=VARCHAR},
+      companyName = #{companyName,jdbcType=VARCHAR},
+      jobType = #{jobType,jdbcType=VARCHAR},
+      area = #{area,jdbcType=VARCHAR},
+      detailAdress = #{detailAdress,jdbcType=VARCHAR},
+      contact = #{contact,jdbcType=VARCHAR},
+      phoneNum = #{phoneNum,jdbcType=VARCHAR},
+      peopleNum = #{peopleNum,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=VARCHAR},
+      salary = #{salary,jdbcType=VARCHAR},
+      workTime = #{workTime,jdbcType=VARCHAR},
+      jobRemark = #{jobRemark,jdbcType=VARCHAR},
+      publishTime = #{publishTime,jdbcType=VARCHAR},
+      sicheck = #{sicheck,jdbcType=VARCHAR},
+      wanted = #{wanted,jdbcType=VARCHAR}
+    where jobId = #{jobId,jdbcType=INTEGER}
+  </update>
+
+  <select id="getAllJobs" resultType="com.ptjob.entity.Job">
+   select * from job 
+  </select>
+  
+  <select id="getJobByUserName" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from job
+    where userName = #{userNames}
+  </select>
+  
+  <select id="getJobByJobType" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from job
+    where jobType= #{jobType}
+  </select>
+  
+   <select id="getJobByNoChecked" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from job
+    where sicheck=#{sicheck}
+  </select>
+  
+  <select id="getJobByWanted" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from job
+    where wanted=#{wanted}
+  </select>
+  <!-- 查询各种情况下的记录总数-->
+    <select id="getJobsTotal" parameterType="com.ptjob.entity.Job" resultType="int">
+    select 
+   count(1)
+    from job where 1=1
+			<if test="jobTitle!= null">
+				and jobTitle like concat('%',#{jobTitle},'%')
+			</if>
+			<if test="userName!= null">
+				and userName like concat('%',#{userName},'%')
+			</if>
+			<if test="sicheck!= null">
+				and sicheck like concat('%',#{sicheck},'%')
+			</if>
+		   <!--  <if test="job.companyName!= null">
+				and companyName like concat('%',#{companyName},'%')
+			</if>  -->
+			<if test="area!= null">
+				and area like concat('%',#{area},'%')
+			</if>
+			<if test="wanted!= null">
+				and wanted like concat('%',#{wanted},'%')
+			</if>
+			<if test="jobType!= null">
+				and jobType like concat('%',#{jobType},'%')
+			</if>
+
+  </select>
+  <!-- 根据各种条件进行分页查询 -->
+   <select id="getJobsByPages" parameterType="com.ptjob.entity.JobPage" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from job where 1=1
+			<if test="jobTitle!= null">
+				and jobTitle like concat('%',#{jobTitle},'%')
+			</if>
+			<if test="userName!= null">
+				and userName like concat('%',#{userName},'%')
+			</if>
+			<if test="sicheck!= null">
+				and sicheck like concat('%',#{sicheck},'%')
+			</if>
+		 <if test="companyName!= null">
+				and companyName like concat('%',#{companyName},'%')
+			</if>  
+			<if test="area!= null">
+				and area like concat('%',#{area},'%')
+			</if>
+			<if test="wanted!= null">
+				and wanted like concat('%',#{wanted},'%')
+			</if>
+			<if test="jobType!= null">
+				and jobType like concat('%',#{jobType},'%')
+			</if>
+
+   limit #{start},#{pagesize}
+
+  </select>
+  
+  
+  <!-- 获取总记录数 -->
+  <select id="gettotal" resultType="int">
+     select count(1) from job  
+  </select>
+</mapper>

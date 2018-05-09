@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#btn1 {
+				width: 150px;
+				height: 40px;
+				background-color: rgb(79, 164, 175);
+				border-radius: 25px;
+			}
+		</style>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$("#btn1").hover(function() {
+					$(this).css({
+						"background-color": "rgb(68,68,68)",
+						"color": "white"
+					});
+				}, function() {
+					$(this).css({
+						"background-color": "rgb(79,164,175)",
+						"color": "black"
+					});
+				})
+			})
+		</script>
+	</head>
+
+	<body>
+		<center>
+			<div id="" style="z-index: 1;">
+				<form class=""  method="get" role="form">
+					<h1 style="color: white;">我们与你一起共成长</h1>
+					<!--<input type="email"  class="input" name="EMAIL" id="email1" placeholder="请输入您的邮箱">-->
+					<input type="submit" class="input" name="subscribe" value="一起兼职吧！" id="btn1">
+				</form>
+			</div>
+		</center>
+	</body>
+<script type="text/javascript">
+$(function(){
+	$("#btn1").click(function(){
+		window.parent.location.href='joblist.jsp';
+	})
+})
+</script>
+</html>
